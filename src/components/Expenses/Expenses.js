@@ -8,8 +8,6 @@ const Expenses = (props) => {
   const [filterData, setFilterData] = useState("2020");
 
   const handleFilterData = (enteredFilterData) => {
-    // console.log("Inside expenses.js");
-    // console.log(enteredFilterData);
     setFilterData(enteredFilterData);
   };
 
@@ -20,8 +18,11 @@ const Expenses = (props) => {
           selectedFilter={filterData}
           onSaveFilterData={handleFilterData}
         />
-        {props.items.map((expense) => (
+        {props.items
+          .filter(expense => expense.date.getFullYear().toString() === filterData)
+          .map((expense) => (
           <ExpenseItem
+            key={expense.id}
             title={expense.title}
             date={expense.date}
             amount={expense.amount}
