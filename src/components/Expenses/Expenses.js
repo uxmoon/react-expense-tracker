@@ -16,9 +16,17 @@ const Expenses = (props) => {
   return (
     <div>
       <Card className="expenses">
-        <ExpensesFilter selectedFilter={filterData} onSaveFilterData={handleFilterData} />
-        {props.data.map(expense => <ExpenseItem title={expense.title} date={expense.date} amount={expense.amount} />)}
-
+        <ExpensesFilter
+          selectedFilter={filterData}
+          onSaveFilterData={handleFilterData}
+        />
+        {props.items.map((expense) => (
+          <ExpenseItem
+            title={expense.title}
+            date={expense.date}
+            amount={expense.amount}
+          />
+        ))}
       </Card>
     </div>
   );
