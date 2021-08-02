@@ -1,7 +1,6 @@
 import React from "react";
 import ChartBar from "./ChartBar";
 import "./Chart.css";
-import { props } from "bluebird";
 
 const Chart = (props) => {
   return (
