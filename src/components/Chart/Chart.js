@@ -3,7 +3,7 @@ import ChartBar from "./ChartBar";
 import "./Chart.css";
 import { props } from "bluebird";
 
-const Chart = () => {
+const Chart = (props) => {
   return (
     <div className="chart">
       {props.dataPoints.map((dataPoint) => (
